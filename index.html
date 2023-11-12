@@ -17,6 +17,7 @@
     </form>
     <br>
     <textarea id="output" rows="4" cols="50"></textarea>
+    <button onclick="copyText()">Copy</button>
     <br>
     <a id="blob-file-download" style="display: none;">Download Tracker Data</a>
     <br>
@@ -827,27 +828,40 @@
         }
       };
 
-      // When the page is loaded, restore the checkbox values from localStorage
-      window.addEventListener('load', function() {
-        // Get the text box by its ID
-        var textBox = document.getElementById('output');
+      // Function to copy text to clipboard
+      function copyText() {
+        // Get the text field
+        var copyText = document.getElementById("output");
 
-        // Get all checkboxes
-        var checkboxes = document.querySelectorAll('input[type=checkbox]');
+        // Select the text field
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); // For mobile devices
 
-        // Loop through all checkboxes
-        for (var i = 0; i < checkboxes.length; i++) {
-            // Get the saved value from localStorage (it will be 'true' if the checkbox was checked, and 'false' otherwise)
-            var savedValue = localStorage.getItem(checkboxes[i].value);
-
-            // If there was a saved value, restore it
-            if (savedValue !== null) {
-                checkboxes[i].checked = (savedValue === 'true');
-            } else {
-                // Otherwise, set the default value to false
-                checkboxes[i].checked = false;
-            }
+        // Copy the text inside the text field
+        navigator.clipboard.writeText(copyText.value);
         }
-      });
+
+    //   // When the page is loaded, restore the checkbox values from localStorage
+    //   window.addEventListener('load', function() {
+    //     // Get the text box by its ID
+    //     var textBox = document.getElementById('output');
+
+    //     // Get all checkboxes
+    //     var checkboxes = document.querySelectorAll('input[type=checkbox]');
+
+    //     // Loop through all checkboxes
+    //     for (var i = 0; i < checkboxes.length; i++) {
+    //         // Get the saved value from localStorage (it will be 'true' if the checkbox was checked, and 'false' otherwise)
+    //         var savedValue = localStorage.getItem(checkboxes[i].value);
+
+    //         // If there was a saved value, restore it
+    //         if (savedValue !== null) {
+    //             checkboxes[i].checked = (savedValue === 'true');
+    //         } else {
+    //             // Otherwise, set the default value to false
+    //             checkboxes[i].checked = false;
+    //         }
+    //     }
+    //   });
   </script>
 </html>
