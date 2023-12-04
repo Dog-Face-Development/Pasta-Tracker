@@ -25,12 +25,12 @@ test.describe('Pasta Tracker', () => {
   });
 
   test('should display "Copy" button', async () => {
-    const copyButton = await page.$('button[onclick="copyToClipboard()"]');
+    const copyButton = await page.$('button[onclick="copyText()"]');
     expect(copyButton).toBeTruthy();
   });
 
   test('should display "Download Tracker Data" link', async () => {
-    const downloadLink = await page.$('a[download="trackerData.txt"]');
+    const downloadLink = await page.$('a[id="blob-file-download"]');
     expect(downloadLink).toBeTruthy();
   });
 
