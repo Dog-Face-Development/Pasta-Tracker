@@ -1,0 +1,21 @@
+version = 1
+
+test_patterns = ["tests/**"]
+
+[[analyzers]]
+name = "secrets"
+
+[[analyzers]]
+name = "javascript"
+
+  [analyzers.meta]
+  environment = [
+    "nodejs",
+    "browser"
+  ]
+
+[[analyzers]]
+name = "docker"
+
+[[transformers]]
+name = "prettier"
