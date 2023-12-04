@@ -5,7 +5,7 @@ test.describe('Pasta Tracker', () => {
 
   test.beforeEach(async ({ browser }) => {
     page = await browser.newPage();
-    await page.goto('http://localhost:5000/index.html');
+    await page.goto('/index.html');
   });
 
   test('should display correct title', async () => {
