@@ -1,0 +1,14 @@
+{
+  "name": "pasta-tracker",
+  "version": "1.0.0",
+  "description": "[![Deploy static content to Pages](https://github.com/Dog-Face-Development/Pasta-Tracker/actions/workflows/static.yml/badge.svg)](https://github.com/Dog-Face-Development/Pasta-Tracker/actions/workflows/static.yml)",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.3"
+  }
+}
