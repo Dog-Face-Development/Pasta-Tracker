@@ -1,25 +1,25 @@
-const { test, expect } = require('@playwright/test');
+const { test, expect } = require("@playwright/test");
 
-test.describe('Pasta Tracker', () => {
+test.describe("Pasta Tracker", () => {
   let page;
 
   test.beforeEach(async ({ browser }) => {
     page = await browser.newPage();
-    await page.goto('/index.html');
+    await page.goto("/index.html");
   });
 
-  test('should display correct title', async () => {
-    expect(await page.title()).toBe('🍝 Pasta Tracker');
+  test("should display correct title", async () => {
+    expect(await page.title()).toBe("🍝 Pasta Tracker");
   });
 
-  test('should display save and load buttons', async () => {
+  test("should display save and load buttons", async () => {
     const saveButton = await page.$('button[onclick="encodeToString()"]');
     const loadButton = await page.$('button[onclick="decodeFromString()"]');
     expect(saveButton).toBeTruthy();
     expect(loadButton).toBeTruthy();
   });
 
-  test('should have checkboxes for pasta types', async () => {
+  test("should have checkboxes for pasta types", async () => {
     const checkbox = await page.$('input[type="checkbox"]');
     expect(checkbox).toBeTruthy();
   });
